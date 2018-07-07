@@ -1,0 +1,291 @@
+body,
+html {
+	height: 100%;
+	width: 100%;
+	padding: 0;
+	margin: 0;
+	line-height: 1.63;
+	font-family: 'Roboto', sans-serif;
+}
+
+* {
+	box-sizing: border-box
+}
+
+.container {
+	display: grid;
+	height: 100%;
+	padding: 5rem;
+	width: 100%;
+	justify-content: space-around;
+	grid-template-columns: minmax(120px, 10%) 0.5fr 300px;
+	grid-template-rows: auto-fill;
+	grid-template-areas: 'menu timetable user-info'
+}
+
+.timetable {
+	grid-area: timetable;
+	margin-left: 2rem;
+	margin-right: 1rem;
+	margin-top: 3rem;
+	margin-bottom: 3rem;
+	display: flex;
+	min-width: 300px;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+}
+
+.select-time-range-form {
+	margin-bottom: 2rem;
+	display: flex;
+}
+
+.select-time-range-form button {
+	display: block;
+	background-color: #099c9e;
+	color: white;
+	outline: none;
+	cursor: pointer;
+	margin-left: 1rem;
+	;
+	border: none;
+	font-size: 15px;
+}
+
+.custom-select-wrp {
+	display: flex;
+}
+
+.custom-select {
+	position: relative;
+	width: 80px;
+}
+
+.custom-select select {
+	display: none;
+}
+
+.select-selected:after {
+	position: absolute;
+	content: "";
+	top: 5px;
+	right: 2px;
+	width: 0;
+	height: 0;
+	border: 6px solid transparent;
+	border-color: #099c9e transparent transparent transparent;
+}
+
+.select-selected.select-arrow-active:after {
+	border-color: transparent transparent #099c9e transparent;
+	top: 0px;
+}
+
+.select-selected {
+	color: #021a1a;
+	border: 1px solid transparent;
+	border-color: transparent transparent rgba(0, 0, 0, 0.1) transparent;
+	cursor: pointer;
+}
+
+.select-items div {
+	color: white;
+	cursor: pointer;
+	text-align: center;
+}
+
+.select-items {
+	width: 80px;
+	position: absolute;
+	background-color: #099c9e;
+	height: 300px;
+	overflow-y: scroll;
+	top: 100%;
+	left: 0;
+	right: 0;
+	z-index: 99;
+}
+
+.select-hide {
+	display: none;
+}
+
+.select-items div:hover,
+.same-as-selected {
+	background-color: #f6f6f6;
+	color: #021a1a;
+}
+
+.hours-table {
+	box-shadow: 0 8px 40px -14px rgba(0, 0, 0, 0.25);
+	text-align: center;
+	width: 80%;
+}
+
+.hours-table td {
+	padding: 0.5rem;
+	cursor: pointer;
+}
+
+.hour-item:hover {
+	background-color: #099c9e;
+}
+
+.selected-hour-item {
+	background-color: #099c9e;
+	color: white;
+}
+
+.menu {
+	grid-area: menu;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between
+}
+
+.menu .menu-item {
+	font-size: 20px;
+	font-family: arial;
+	color: white;
+	background-color: lightgray;
+	display: block;
+	text-align: center;
+	padding: 10px;
+	box-shadow: 0 20px 40px -14px rgba(0, 0, 0, 0.25);
+	cursor: pointer;
+}
+
+.menu .menu-item-active {
+	background-color: #065c5c;
+}
+
+.menu .menu-item:hover {
+	background-color: #099c9e
+}
+
+.menu .menu-item-active:hover {
+	background-color: #065c5c;
+}
+
+.user-info {
+	padding: 2rem;
+	grid-area: user-info;
+	background-color: #f6f6f6;
+	display: flex;
+	flex-direction: column;
+	box-shadow: 0 20px 40px -14px rgba(0, 0, 0, 0.25);
+}
+
+.user-info img {
+	height: 100px;
+	width: 100px;
+	align-self: center;
+	border-radius: 100px;
+}
+
+.user-info h2 {
+	color: #021a1a;
+	margin-top: 1.5rem;
+	text-align: center;
+	font-size: 1.2rem;
+	margin-bottom: 0.4rem;
+}
+
+.user-info .phone,
+.user-info .position {
+	text-align: center;
+}
+
+.user-info .phone i {
+	margin-right: 0.5rem;
+}
+
+.user-workload {
+	margin-top: 1.3rem;
+	color: rgba(0, 0, 0, 0.70);
+}
+
+.user-workload h3 {
+	text-align: center;
+	font-size: 1rem;
+	margin-bottom: 10px;
+	color: #065c5c
+}
+
+.workload-table {
+	width: 100%;
+	max-width: 100%;
+	font-size: 0.9rem;
+	text-align: left;
+}
+
+@media screen and (max-width: 900px) {
+	.container {
+		justify-content: center;
+		grid-template-columns: auto auto;
+		grid-template-areas: "menu timetable" "user-info user-info";
+	}
+	.workload-table {
+		width: 80%;
+		margin-left: 15%;
+		margin-right: 10%;
+	}
+	.menu .menu-item {
+		box-shadow: 0 15px 30px -14px rgba(0, 0, 0, 0.25);
+	}
+}
+
+@media screen and (max-width: 500px) {
+	.container {
+		padding: 0.7rem;
+	}
+	.timetable {
+		margin-left: 0;
+		margin-right: 0;
+		margin-top: 2rem;
+		min-width: 0;
+	}
+	.select-time-range-form {
+		margin-left: 1rem;
+		flex-direction: column;
+	}
+	.select-time-range-form button {
+		margin-left: 0;
+		margin-top: 0.5rem;
+	}
+	.select-selected {
+		font-size: 12px;
+	}
+	.custom-select {
+		width: 60px;
+	}
+	.select-selected:after {
+		top: 5px;
+		right: 2px;
+		width: 0;
+		height: 0;
+		border: 4px solid transparent;
+		border-color: #099c9e transparent transparent transparent;
+	}
+	.menu {
+		margin-left: 2%;
+	}
+	.menu .menu-item {
+		font-size: 15px;
+		padding: 6px;
+	}
+	.user-info {
+		padding: 1rem;
+	}
+	.hours-table {
+		font-size: 12px;
+	}
+	.hours-table td {
+		padding: 5px;
+	}
+	.workload-table {
+		width: 100%;
+		margin: 0;
+	}
+}

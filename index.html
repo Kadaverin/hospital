@@ -1,0 +1,260 @@
+<!doctype html>
+<html lang="en">
+   <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <title>Work timetable</title>
+      <link rel="stylesheet" href="css/main.css">
+      <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css"        
+         integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
+      <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+   </head>
+   <body>
+      <div class = 'container'>
+         <section class = 'menu' id = 'menu'>
+            <span class= 'menu-item menu-item-active'>Monday</span>
+            <span class= 'menu-item'>Tuesday</span>
+            <span class= 'menu-item'>Wednesday</span>
+            <span class= 'menu-item'>Thurday</span>
+            <span class= 'menu-item'>Friday</span>
+            <span class= 'menu-item'>Saturday</span>
+            <span class= 'menu-item'>Sunday</span>
+         </section>
+         <section class = 'timetable' >
+            <form class = 'select-time-range-form' onsubmit= 'handleSetTimeRange();'>
+               <div class = 'custom-select-wrp'>
+                  <div class="custom-select">
+                     <select id = 'start-time-select' name='n'>
+                        <option value="" disabled selected hidden>from</option>
+                        <option value="0">00:00</option>
+                        <option value="1">01:00</option>
+                        <option value="2">02:00</option>
+                        <option value="3">03:00</option>
+                        <option value="4">04:00</option>
+                        <option value="5">05:00</option>
+                        <option value="6">06:00</option>
+                        <option value="7">07:00</option>
+                        <option value="8">08:00</option>
+                        <option value="9">09:00</option>
+                        <option value="10">10:00</option>
+                        <option value="11">11:00</option>
+                        <option value="12">12:00</option>
+                        <option value="13">13:00</option>
+                        <option value="14">14:00</option>
+                        <option value="15">15:00</option>
+                        <option value="16">16:00</option>
+                        <option value="17">17:00</option>
+                        <option value="18">18:00</option>
+                        <option value="19">19:00</option>
+                        <option value="20">20:00</option>
+                        <option value="21">21:00</option>
+                        <option value="22">22:00</option>
+                        <option value="23">23:00</option>
+                     </select>
+                  </div>
+                  <div class="custom-select">
+                     <select id = 'end-time-select'>
+                        <option value="" disabled selected hidden>to</option>
+                        <option value="0">00:00</option>
+                        <option value="1">01:00</option>
+                        <option value="2">02:00</option>
+                        <option value="3">03:00</option>
+                        <option value="4">04:00</option>
+                        <option value="5">05:00</option>
+                        <option value="6">06:00</option>
+                        <option value="7">07:00</option>
+                        <option value="8">08:00</option>
+                        <option value="9">09:00</option>
+                        <option value="10">10:00</option>
+                        <option value="11">11:00</option>
+                        <option value="12">12:00</option>
+                        <option value="13">13:00</option>
+                        <option value="14">14:00</option>
+                        <option value="15">15:00</option>
+                        <option value="16">16:00</option>
+                        <option value="17">17:00</option>
+                        <option value="18">18:00</option>
+                        <option value="19">19:00</option>
+                        <option value="20">20:00</option>
+                        <option value="21">21:00</option>
+                        <option value="22">22:00</option>
+                        <option value="23">23:00</option>
+                     </select>
+                  </div>
+               </div>
+               <button type="submit"><i class="fas fa-check"></i></button>
+            </form>
+            <table class = 'hours-table' id = 'hours-table'>
+               <tr>
+                  <td class = 'hour-item' id = '0'>00:00</td>
+                  <td class = 'hour-item' id = '8'>08:00</td>
+                  <td class = 'hour-item' id = '16'>16:00</td>
+               </tr>
+               <tr>
+                  <td class = 'hour-item' id = '1'>01:00</td>
+                  <td class = 'hour-item' id = '9'>09:00</td>
+                  <td class = 'hour-item' id = '17'>17:00</td>
+               </tr>
+               <tr>
+                  <td class = 'hour-item' id = '2'>02:00</td>
+                  <td class = 'hour-item' id = '10'>10:00</td>
+                  <td class = 'hour-item' id = '18'>18:00</td>
+               </tr>
+               <tr>
+                  <td class = 'hour-item' id = '3'>03:00</td>
+                  <td class = 'hour-item' id = '11'>11:00</td>
+                  <td class = 'hour-item' id = '19'>19:00</td>
+               </tr>
+               <tr>
+                  <td class = 'hour-item' id = '4'>04:00</td>
+                  <td class = 'hour-item' id = '12'>12:00</td>
+                  <td class = 'hour-item' id = '20'>20:00</td>
+               </tr>
+               <tr>
+                  <td class = 'hour-item' id = '5'>05:00</td>
+                  <td class = 'hour-item' id = '13'>13:00</td>
+                  <td class = 'hour-item' id = '21'>21:00</td>
+               </tr>
+               <tr>
+                  <td class = 'hour-item' id = '6'>06:00</td>
+                  <td class = 'hour-item' id = '14'>14:00</td>
+                  <td class = 'hour-item' id = '22'>22:00</td>
+               </tr>
+               <tr>
+                  <td class = 'hour-item' id = '7'>07:00</td>
+                  <td class = 'hour-item' id = '15'>15:00</td>
+                  <td class = 'hour-item' id = '23'>23:00</td>
+               </tr>
+            </table>
+         </section>
+         <section class = 'user-info'>
+            <img src="img/avatar.jpg" alt="avatar">
+            <h2>Harvey Williams Cushing</h2>
+            <span class = 'position'>Neurosurgeon</span>
+            <span class = 'phone'>
+            <i class="fa fa-phone"></i>
+            1-541-754-3010
+            </span>
+            <div class = 'user-workload'>
+               <h3>Workload</h3>
+               <table class = 'workload-table'>
+                  <thead>
+                     <tr>
+                        <th> <i class="fas fa-calendar-alt"></i> Day </th>
+                        <th> <i class="far fa-clock"></i> Hours</th>
+                     </tr>
+                  </thead>
+                  <tbody>
+                     <tr>
+                        <td>Monday</td>
+                        <td id = 'monday-workload'>0</td>
+                     </tr>
+                     <tr>
+                        <td>Tuesday</td>
+                        <td id = 'tuesday-workload'>0</td>
+                     </tr>
+                     <tr>
+                        <td>Wednesday</td>
+                        <td id = 'wednesday-workload'>0</td>
+                     </tr>
+                     <tr>
+                        <td>Thurday</td>
+                        <td id = 'thurday-workload'>0</td>
+                     </tr>
+                     <tr>
+                        <td>Friday</td>
+                        <td id = 'friday-workload'>0</td>
+                     </tr>
+                     <tr>
+                        <td>Saturday</td>
+                        <td id = 'saturday-workload'> 0</td>
+                     </tr>
+                     <tr>
+                        <td>Sunday</td>
+                        <td id = 'sunday-workload'>0</td>
+                     </tr>
+                  </tbody>
+               </table>
+            </div>
+         </section>
+      </div>
+      <script type = 'text/javascript' src = 'js/workTimetable.js' > </script>
+      <script type="text/javascript" src = 'js/customizeSelect.js'> </script>
+      <script>
+         const timetable = new WorkTimetable('hour-item', 'selected-hour-item');
+         
+         hoursTable = document.getElementById('hours-table');
+         hoursTable.onclick = (e) =>{
+             if ( e.target.classList.contains('hour-item') ) {
+                 e.target.classList.toggle('selected-hour-item')
+                 saveTimetableForDay();
+                 renderTimeloadForCurrentDay();
+             }
+            
+         }
+         
+         function handleSetTimeRange(){
+             event.preventDefault();
+            let startTimeSelect = document.getElementById('start-time-select')
+            let endTimeSelect = document.getElementById('end-time-select')
+            let startHourId = startTimeSelect.options[startTimeSelect.selectedIndex].value
+            let endHourId = endTimeSelect.options[endTimeSelect.selectedIndex].value
+         
+            if ( validateTimeRanges(startHourId ,endHourId ) ){
+                timetable.setHoursByInterval(+startHourId,+endHourId);
+                renderTimeloadForCurrentDay();
+            }
+         }
+         
+         function validateTimeRanges(startVal ,endVal ){
+             if (startVal ===''){ 
+                 alert('You did not select the start value for time! Look at "from" element');
+                 return false;
+             }
+             if (endVal === ''){
+                 alert('You did not select the final value for time! Look at "to" element');
+                 return false;
+             }
+             
+             if ( +startVal > +endVal){
+                 alert('The final value for time must be less than the start value! Try again');
+                 return false;
+             }
+             return true;
+         }
+         
+         
+         
+         function saveTimetableForDay(){
+             let idsArr = [];
+             let selected_hours = document.getElementsByClassName('selected-hour-item');
+             for (let i = 0; i< selected_hours.length; i++ ){
+                 idsArr.push(selected_hours[i].id)
+             }
+             timetable.setHoursForWork(idsArr)
+         }
+         
+         function renderTimeloadForCurrentDay(){
+            let elem = document.getElementById(timetable.activeDay + '-workload')
+            let newWorkload = timetable.totalWorkHoursForActiveDay();
+            elem.innerText = newWorkload;
+         }
+         
+         document.getElementById('menu').onclick = (e) =>{
+         
+             if (e.target.tagname = 'span'){
+                  menuItems = document.getElementsByClassName('menu-item')
+                  for( let i =0; i< menuItems.length; i++){
+                      if(menuItems[i] == event.target){
+                          menuItems[i].classList.toggle('menu-item-active', true)
+                      }else{
+                          menuItems[i].classList.toggle('menu-item-active', false)
+                      }
+                  }
+                  timetable.renderTimetableForDay(event.target.innerText.toLowerCase())
+             }
+         }
+         
+         alert(`Welcome to your personal work schedule. Here you can choose the hours when you can work in our hospital.To do this, either click on all the blocks with the hours that you want or select the interval using menu ( from .. to ). To cancel the selection of a specific hour, press the button again`)
+      </script>
+   </body>
